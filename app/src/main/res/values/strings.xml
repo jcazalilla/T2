@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tarea 2 PMDM</string>
+    <string name="lista_de_personajes">Lista de personajes</string>
+    <string name="detalles_del_personje">Detalles del personaje</string>
+
+    <string name="boton_volver">Volver</string>
+
+</resources>
