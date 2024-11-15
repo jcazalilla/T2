@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import moreno.cazalilla.jesusmaria.t2.databinding.PersonajeDetailFragmentBinding;
 
@@ -20,7 +21,6 @@ public class PersonajeDetailFragment extends Fragment {
 
 
     private PersonajeDetailFragmentBinding binding;
-    Button button;
     Navigation navigation;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container,
@@ -32,6 +32,12 @@ public class PersonajeDetailFragment extends Fragment {
 
         //con viewBinding controlamos evento del botón para volver a listado de personajes
         binding.btnVolver.setOnClickListener(this::changeToListFragment);
+
+
+        //Toast informando que el usuario está en el detalle del personje seleccionado
+        Toast.makeText(getActivity(),
+                "Se ha seleccionado el personaje: " + getArguments().getString("name"),
+                Toast.LENGTH_LONG).show();
 
         return binding.getRoot();
     }
@@ -58,9 +64,9 @@ public class PersonajeDetailFragment extends Fragment {
             binding.ability.setText(ability);
             binding.image.setImageResource(image);
 
+
         }
     }
-
 
 
     public void onStart() {

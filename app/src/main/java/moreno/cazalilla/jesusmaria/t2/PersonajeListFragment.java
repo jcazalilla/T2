@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 import moreno.cazalilla.jesusmaria.t2.databinding.PersonajeListFragmentBinding;
@@ -30,6 +33,14 @@ public class PersonajeListFragment extends Fragment {
                              Bundle savedInstanceState) {
         //inflamos el layout utilizando binding
         binding = PersonajeListFragmentBinding.inflate(inflater, container, false);
+
+
+        //SnackBar informando al usuario en la lista de personajes
+        Snackbar.make(
+                binding.snacBar,
+                "Bienvenidos al mundo de Mario",
+                BaseTransientBottomBar.LENGTH_SHORT
+        ).show();
 
         return binding.getRoot();
     }
