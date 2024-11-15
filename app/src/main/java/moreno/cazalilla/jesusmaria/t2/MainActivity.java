@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -27,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     NavController navController;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         //configurar el NavController
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this,navController);
+        NavigationUI.setupActionBarWithNavController(this, navController);
     }
 
     //método para manejar el click en el RecyclerView
@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onSupportNavigateUp(){
+    public boolean onSupportNavigateUp() {
         //utiliza el método navigationUp del NavController
-        return navController.navigateUp()||super.onNavigateUp();
+        return navController.navigateUp() || super.onNavigateUp();
     }
 
     //menú en ActionBar "Acerca de..."
@@ -71,5 +71,34 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.acerca) {
+            // método Alert Dialog Acerca de...
+            setAlertDialog();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
+
+    private void setAlertDialog() {
+        AlertDialog.Builder alertaDialogBuilder = new AlertDialog.Builder(this);
+        alertaDialogBuilder
+                .setTitle("Aplicación desarrollada por:")
+                .setMessage("Jesús María Moreno Cazalillla. \n" +
+                        "versión 1.0")
+                .setPositiveButton("Aceptar", new OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //dejamos vacío y cierra dialogo al pulsar aceptar
+                    }
+                })// no gestionamos el botón negativo, solo mostramos info
+                .create().show();
+
+    }
+}
+
+
+
 
