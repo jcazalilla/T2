@@ -2,11 +2,19 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.T2" parent="Theme.Material3.DayNight">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+       <!-- <item name="colorPrimary">@color/design_default_color_primary</item>
+        <item name="colorPrimaryDark">@color/design_default_color_primary</item>
+        <item name="colorAccent">@color/design_default_color_primary</item>-->
 
-       <!-- <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>-->
+
+
+        <!-- SplashScreen cofiguration-->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_mario_splash</item>
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/design_default_color_primary</item>
+        <item name="android:windowSplashScreenBackground">@color/blue</item>
+
+
     </style>
 
     <style name="Theme.T2" parent="Base.Theme.T2" />
