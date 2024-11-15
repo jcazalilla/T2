@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ public class PersonajeDetailFragment extends Fragment {
 
     private PersonajeDetailFragmentBinding binding;
     Button button;
+    Navigation navigation;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,7 +30,16 @@ public class PersonajeDetailFragment extends Fragment {
         binding = PersonajeDetailFragmentBinding.inflate(inflater,
                 container, false);
 
+        //con viewBinding controlamos evento del botón para volver a listado de personajes
+        binding.btnVolver.setOnClickListener(this::changeToListFragment);
+
         return binding.getRoot();
+    }
+
+
+    private void changeToListFragment(View view) {
+        //navegamos al fragmento listado de personajes
+        Navigation.findNavController(view).navigate(R.id.personajeListFragment);
     }
 
 
@@ -48,8 +59,9 @@ public class PersonajeDetailFragment extends Fragment {
             binding.image.setImageResource(image);
 
         }
-
     }
+
+
 
     public void onStart() {
         super.onStart();

@@ -1,9 +1,18 @@
 package moreno.cazalilla.jesusmaria.t2;
 
+import static android.widget.Toast.makeText;
+
+import static androidx.appcompat.app.AlertDialog.*;
+
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -16,6 +25,8 @@ import moreno.cazalilla.jesusmaria.t2.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     NavController navController;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
         //navegar al PersonajeDetailFragment con el Bundle
         Navigation.findNavController(view).navigate(R.id.personajeDetailFragment, bundle);
+
+
     }
 
     @Override
@@ -51,4 +64,12 @@ public class MainActivity extends AppCompatActivity {
         //utiliza el método navigationUp del NavController
         return navController.navigateUp()||super.onNavigateUp();
     }
-}
+
+    //menú en ActionBar "Acerca de..."
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    }
+
