@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/acerca"
-        app:showAsAction="never"
         android:title="@string/acercaDe..."
-        android:visible="true" />
+        android:visible="true"
+        app:showAsAction="never|collapseActionView" />
 </menu>

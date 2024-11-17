@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">Tarea 2 PMDM</string>
-    <string name="lista_de_personajes">Lista de personajes</string>
-    <string name="detalles_del_personje">Detalles del personaje</string>
+    <string name="app_name">Task 2 PMDM</string>
+    <string name="lista_de_personajes">Character list</string>
+    <string name="detalles_del_personje">Character detail</string>
 
-    <string name="boton_volver">Volver</string>
-    <string name="acercaDe...">Acerca de...</string>
+    <string name="boton_volver">Return</string>
+    <string name="acercaDe...">About...</string>
+    <string name="textSplash">Super Mario Bross App</string>
 
+    <string name="setting_drawer">Settings</string>
+    <string name="language_drawer">Language</string>
+    <string name="home_drawer">Home</string>
 </resources>

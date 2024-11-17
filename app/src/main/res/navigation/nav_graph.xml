@@ -8,9 +8,17 @@
     <fragment
         android:id="@+id/personajeDetailFragment"
         android:name="moreno.cazalilla.jesusmaria.t2.PersonajeDetailFragment"
-        android:label="personaje_detail_fragment"/>
+        android:label="personaje_detail_fragment">
+        <action
+            android:id="@+id/action_personajeDetailFragment_to_personajeListFragment"
+            app:destination="@id/personajeListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/personajeListFragment"
         android:name="moreno.cazalilla.jesusmaria.t2.PersonajeListFragment"
-        android:label="personaje_list_fragment"/>
+        android:label="personaje_list_fragment">
+        <action
+            android:id="@+id/action_personajeListFragment_to_personajeDetailFragment"
+            app:destination="@id/personajeDetailFragment" />
+    </fragment>
 </navigation>

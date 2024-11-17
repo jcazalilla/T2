@@ -75,7 +75,7 @@ Desarrolla una aplicación Android que muestre un listado de personajes de Super
         Opciones del menú:
             Home: Pantalla con la lista de personajes de Super Mario ya creada.
             Ajustes: Listado de ajustes de la app con SharedPreferences.
-                Idioma: Switch que permita cambiar de inglés a español.
+            Idioma: Switch que permita cambiar de inglés a español.
         Ejemplo:
             En mi cuenta de GitHub podéis encontrar un ejemplo de código.
 
