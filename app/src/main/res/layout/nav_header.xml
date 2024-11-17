@@ -1,6 +1,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nav_header"
+    android:theme="@style/Theme.Material3.DayNight.NoActionBar"
+    android:layout_marginTop="75dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/fire"
@@ -23,7 +25,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="30dp"
-        android:text="El mundo de Mario Bross"
+        android:text="@string/world_mario_drawer"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 
@@ -32,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/app_name"
+        android:text="@string/task_mario_drawer"
         android:textColor="@android:color/white"
         android:textSize="24sp" />
 

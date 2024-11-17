@@ -10,4 +10,7 @@
     <string name="setting_drawer">Settings</string>
     <string name="language_drawer">Language</string>
     <string name="home_drawer">Home</string>
+
+    <string name="world_mario_drawer">The world of Mario Bross</string>
+    <string name="task_mario_drawer">Task 2 PMDM</string>
 </resources>

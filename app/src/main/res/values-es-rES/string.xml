@@ -13,4 +13,9 @@
     <string name="setting_drawer">Ajustes</string>
     <string name="language_drawer">Idioma</string>
     <string name="home_drawer">Inicio</string>
+
+
+    <string name="world_mario_drawer">El Mundo de Mario Bross</string>
+    <string name="task_mario_drawer">PMDM Tarea 2</string>
+
 </resources>
