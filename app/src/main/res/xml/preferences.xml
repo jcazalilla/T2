@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="es"
+        android:title="Español"
+        android:defaultValue="true"
+        android:summary="Idioma Español de la aplicación"
+        />
+
+    <CheckBoxPreference
+        android:key="en"
+        android:title="English"
+        android:defaultValue="false"
+        android:summary="Language English of app"
+        />
+
+
+</PreferenceScreen>

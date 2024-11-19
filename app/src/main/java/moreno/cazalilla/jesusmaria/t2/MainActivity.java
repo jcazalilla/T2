@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
      * y desarrolada por el autor.
      */
     private void setAlertDialog() {
-        AlertDialog.Builder alertaDialogBuilder = new AlertDialog.Builder(this);
+        Builder alertaDialogBuilder = new Builder(this);
         alertaDialogBuilder
                 .setTitle("Aplicación desarrollada por:")
                 .setMessage("Jesús María Moreno Cazalillla. \n" +
