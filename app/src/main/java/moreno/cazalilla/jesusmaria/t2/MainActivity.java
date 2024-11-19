@@ -4,19 +4,27 @@ package moreno.cazalilla.jesusmaria.t2;
 import static androidx.appcompat.app.AlertDialog.*;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.splashscreen.SplashScreen;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
@@ -32,18 +40,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
 
-        //cofigurar el control del FragmentManager
+
         FragmentManager fragmentManager = getSupportFragmentManager();
-        //configurar el NavController
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController);
+        NavHostFragment navHostFragment = (NavHostFragment) fragmentManager.findFragmentById(R.id.nav_host_fragment);
+        navController = navHostFragment.getNavController();
+
+
+
 
         // Configurar la navegación
         configureNavigation();
@@ -57,8 +67,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //controlamos que esté activo el icon hamburguesa en la toolBar
+    private void onChangeView(NavController navController, NavDestination navDestination, Bundle bundle) {
+        if(navDestination.getId()==R.id.personajeDetailFragment){
+            toggle.setDrawerIndicatorEnabled(false);
+        }else{
+            toggle.setDrawerIndicatorEnabled(true);
+        }
+
+    }
+
+
     private void configureToggleMenu() {
-        // Configurar el ActionBarDrawerToggle
+        // Configurar el ActionBarDrawerToggle, la integramos con la toolBar
         toggle = new ActionBarDrawerToggle(
                 this,
                 binding.main,
@@ -74,18 +95,24 @@ public class MainActivity extends AppCompatActivity {
 
         // Manejar la selección de elementos del menú
         binding.navView.setNavigationItemSelectedListener(menuItem -> {
-            if (menuItem.getItemId() == R.id.nav_header) {
-                navController.navigate(R.id.personajeListFragment); // Navegar al fragmento de inicio
+            if (menuItem.getItemId() == R.id.nav_home) {
+                // Navegar al fragmento listado de personajes
+                navController.navigate(R.id.personajeListFragment);
+            } else if (menuItem.getItemId() == R.id.nav_ajustes) {
+
+            } else if (menuItem.getItemId() == R.id.nav_idioma) {
+                //abrimos ajustes de idioma de la configuración del teléfono.
+                startActivity(new Intent(Settings.ACTION_LOCALE_SETTINGS));
             }
             binding.main.closeDrawers(); // Cerrar el menú
             return true;
         });
 
-        // Maneja la opción de perfil del header del menú
-        ImageView marioImageView = binding.navView.getHeaderView(0).findViewById(R.id.header_image);
+        // Maneja evento al clickar en la imagen del DrawerNavigation
+        ImageView profileImageView = binding.navView.getHeaderView(0).findViewById(R.id.header_image);
 
-        marioImageView.setOnClickListener(v -> {
-            navController.navigate(R.id.personajeListFragment); // Navegar al fragmento de perfil
+        profileImageView.setOnClickListener(v -> {
+            navController.navigate(R.id.personajeListFragment); // Navegar al fragmento de lista de personajes
             binding.main.closeDrawers(); // Cerrar el menú
         });
     }
@@ -128,14 +155,15 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();//id de la opción del toolbar
 
-
         // Manejar clics en el icono del menú del Drawer
         if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
+
         //manejar clicks de la opción de la toolbar
         if (id == R.id.acerca) {
             // método Alert Dialog Acerca de...
+            //para SnackBar
             setAlertDialog();
             return true;
         }
