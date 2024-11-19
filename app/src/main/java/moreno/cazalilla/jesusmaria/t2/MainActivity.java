@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         NavHostFragment navHostFragment = (NavHostFragment) fragmentManager.findFragmentById(R.id.nav_host_fragment);
         navController = navHostFragment.getNavController();
 
+        navController.addOnDestinationChangedListener(this::onChangeView);
 
 
 
@@ -67,8 +68,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //controlamos que esté activo el icon hamburguesa en la toolBar
+    //controlamos el comportamiento del icono hamburguesa
     private void onChangeView(NavController navController, NavDestination navDestination, Bundle bundle) {
+        if(toggle==null) return;
+
         if(navDestination.getId()==R.id.personajeDetailFragment){
             toggle.setDrawerIndicatorEnabled(false);
         }else{
