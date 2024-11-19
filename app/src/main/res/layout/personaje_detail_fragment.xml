@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".PersonajeDetailFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -18,6 +20,7 @@
             android:id="@+id/detalle_personaje"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:layout_margin="15dp"
             android:orientation="vertical"
             tools:context=".DetallePersonaje">
@@ -25,63 +28,70 @@
             <TextView
                 android:id="@+id/name"
                 style="@style/estilo_titulo"
-                android:layout_width="195dp"
-                android:layout_height="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="60dp"
                 android:gravity="center_horizontal"
                 app:layout_constraintBottom_toTopOf="@+id/image"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.458"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintHorizontal_bias="0.461"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintVertical_weight=".1"/>
+
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="203dp"
-                android:layout_height="175dp"
+                android:layout_width="281dp"
+                android:layout_height="204dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="196dp"
+                android:layout_marginTop="136dp"
                 android:layout_marginEnd="32dp"
                 android:cropToPadding="true"
                 android:foregroundGravity="center_horizontal|center_vertical"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.469"
+                app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_weight=".2" />
 
             <TextView
                 android:id="@+id/description"
                 style="@style/estilo_descripcion"
-                android:layout_width="312dp"
-                android:layout_height="118dp"
+                android:layout_width="344dp"
+                android:layout_height="137dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:gravity="left"
                 app:layout_constraintBottom_toTopOf="@+id/ability"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.54"
+                app:layout_constraintHorizontal_bias="0.384"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.949"
+                app:layout_constraintVertical_weight=".1" />
 
             <TextView
                 android:id="@+id/ability"
                 style="@style/estilo_habilidades"
-                android:layout_width="312dp"
-                android:layout_height="121dp"
+                android:layout_width="327dp"
+                android:layout_height="101dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/btn_volver"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_weight=".1" />
 
             <Button
                 android:id="@+id/btn_volver"
                 style="@style/estilo_boton"
-                android:layout_width="116dp"
-                android:layout_height="63dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:text="@string/boton_volver"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

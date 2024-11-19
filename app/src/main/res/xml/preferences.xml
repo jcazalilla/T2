@@ -12,7 +12,7 @@
         android:key="en"
         android:title="English"
         android:defaultValue="false"
-        android:summary="Language English of app"
+        android:summary="English language of the application"
         />
 
 
