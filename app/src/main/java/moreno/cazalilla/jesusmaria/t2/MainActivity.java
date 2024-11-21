@@ -1,31 +1,28 @@
 package moreno.cazalilla.jesusmaria.t2;
 
 
+import static android.R.id.content;
 import static androidx.appcompat.app.AlertDialog.*;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 
@@ -47,13 +44,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         NavHostFragment navHostFragment = (NavHostFragment) fragmentManager.findFragmentById(R.id.nav_host_fragment);
         navController = navHostFragment.getNavController();
 
         navController.addOnDestinationChangedListener(this::onChangeView);
-
 
 
         // Configurar la navegación
@@ -70,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
 
     //controlamos el comportamiento del icono hamburguesa
     private void onChangeView(NavController navController, NavDestination navDestination, Bundle bundle) {
-        if(toggle==null) return;
+        if (toggle == null) return;
 
-        if(navDestination.getId()==R.id.personajeDetailFragment){
+        if (navDestination.getId() == R.id.personajeDetailFragment) {
             toggle.setDrawerIndicatorEnabled(false);
-        }else{
+        } else {
             toggle.setDrawerIndicatorEnabled(true);
         }
 
@@ -102,6 +97,11 @@ public class MainActivity extends AppCompatActivity {
                 // Navegar al fragmento listado de personajes
                 navController.navigate(R.id.personajeListFragment);
             } else if (menuItem.getItemId() == R.id.nav_ajustes) {
+
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(content, new PreferencesFragment())
+                        .commit();
 
             } else if (menuItem.getItemId() == R.id.nav_idioma) {
                 //abrimos ajustes de idioma de la configuración del teléfono.
@@ -170,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
             setAlertDialog();
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 

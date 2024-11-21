@@ -37,7 +37,7 @@ public class PersonajeListFragment extends Fragment {
 
         //SnackBar informando al usuario en la lista de personajes
         Snackbar.make(
-                binding.snacBar,
+                binding.snackBar,
                 "Bienvenidos al mundo de Mario",
                 BaseTransientBottomBar.LENGTH_SHORT
         ).show();

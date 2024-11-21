@@ -13,4 +13,7 @@
 
     <string name="world_mario_drawer">The world of Mario Bross</string>
     <string name="task_mario_drawer">Task 2 PMDM</string>
+    <string name="preference_language">language</string>
+    <string name="preference_tittle">Select language</string>
+
 </resources>

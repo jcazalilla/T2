@@ -17,5 +17,6 @@
 
     <string name="world_mario_drawer">El Mundo de Mario Bross</string>
     <string name="task_mario_drawer">PMDM Tarea 2</string>
-
+    <string name="preference_language">Idioma</string>
+    <string name="preference_tittle">Selecciona idioma</string>
 </resources>
