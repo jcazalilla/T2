@@ -12,43 +12,43 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="26dp"
-        android:weightSum="6">
+        android:weightSum="5">
 
 
         <TextView
             android:id="@+id/name"
             style="@style/estilo_titulo_descripcion"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
+            android:layout_width="347dp"
+            android:layout_height="105dp"
             android:layout_weight="1" />
 
         <ImageView
             android:id="@+id/image"
             style="@style/imageDetailStyle"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_weight="2"/>
+            android:layout_width="345dp"
+            android:layout_height="158dp"
+            android:layout_weight="2" />
 
         <TextView
             android:id="@+id/description"
             style="@style/estilo_descripcion"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
+            android:layout_height="75dp"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/ability"
             style="@style/estilo_habilidades"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_weight="1"/>
+            android:layout_height="72dp"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/btn_volver"
             style="@style/estilo_boton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
 
     </LinearLayout>
