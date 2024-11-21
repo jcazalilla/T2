@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (menuItem.getItemId() == R.id.nav_ajustes) {
 
-
                 getSupportFragmentManager().beginTransaction()
                         .replace(content, new PreferencesFragment())
                         .commit();

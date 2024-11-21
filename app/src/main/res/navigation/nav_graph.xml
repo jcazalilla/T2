@@ -20,5 +20,16 @@
         <action
             android:id="@+id/action_personajeListFragment_to_personajeDetailFragment2"
             app:destination="@id/personajeDetailFragment" />
+        <action
+            android:id="@+id/action_personajeListFragment_to_preferencesFragment"
+            app:destination="@id/preferencesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/preferencesFragment"
+        android:name="moreno.cazalilla.jesusmaria.t2.PreferencesFragment"
+        android:label="PreferencesFragment" >
+        <action
+            android:id="@+id/action_preferencesFragment_to_personajeListFragment"
+            app:destination="@id/personajeListFragment" />
     </fragment>
 </navigation>
