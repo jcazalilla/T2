@@ -2,6 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.T2" parent="Theme.Material3.Dark">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <item name="colorPrimary">@color/cream</item>
+        <item name="colorPrimaryDark">@color/marron_medium</item>
+        <item name="colorAccent">@color/white</item>
     </style>
 </resources>

@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             if (menuItem.getItemId() == R.id.nav_home) {
                 // Navegar al fragmento listado de personajes
                 navController.navigate(R.id.personajeListFragment);
+
             } else if (menuItem.getItemId() == R.id.nav_ajustes) {
 
 
