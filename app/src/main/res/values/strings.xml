@@ -15,5 +15,6 @@
     <string name="task_mario_drawer">Task 2 PMDM</string>
     <string name="preference_language">language</string>
     <string name="preference_tittle">Select language</string>
+    <string name="language_options">Languate options</string>
 
 </resources>

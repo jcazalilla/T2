@@ -8,6 +8,7 @@
         android:defaultValue="español"
         android:entries="@array/language"
         android:entryValues="@array/language_selected"
+        android:summary="@string/language_options"
         />
 
 

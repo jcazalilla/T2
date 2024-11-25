@@ -19,4 +19,5 @@
     <string name="task_mario_drawer">PMDM Tarea 2</string>
     <string name="preference_language">Idioma</string>
     <string name="preference_tittle">Selecciona idioma</string>
+    <string name="language_options">Opciones de idioma</string>
 </resources>

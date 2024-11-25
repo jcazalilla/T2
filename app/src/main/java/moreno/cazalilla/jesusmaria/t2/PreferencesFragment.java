@@ -15,11 +15,9 @@ public class PreferencesFragment extends PreferenceFragmentCompat {
 
 
     public void onCreatePreferences(@Nullable Bundle savedInstanceState, String rootKey) {
+
         //inflamos el archivo de preferencias xml
         setPreferencesFromResource(R.xml.preferences, rootKey);
 
     }
-
-
-
 }
