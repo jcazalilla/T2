@@ -16,7 +16,7 @@
     <string name="preference_language">language</string>
     <string name="preference_tittle">Select language</string>
     <string name="language_options">Languate options</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="settings">Settings</string>
 
 </resources>
