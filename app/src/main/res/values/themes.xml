@@ -5,6 +5,7 @@
          <item name="colorPrimary">@color/fire</item>
          <item name="colorPrimaryDark">@color/fire</item>
          <item name="colorAccent">@color/fire</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
 
     <style name="Theme.T2" parent="Base.Theme.T2" />

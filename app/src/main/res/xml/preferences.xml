@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <ListPreference
-        android:key="language"
-        android:title="@string/preference_tittle"
         android:defaultValue="español"
         android:entries="@array/language"
         android:entryValues="@array/language_selected"
+        android:key="language"
         android:summary="@string/language_options"
-        />
-
+        android:title="@string/preference_tittle" />
 
 
 </PreferenceScreen>

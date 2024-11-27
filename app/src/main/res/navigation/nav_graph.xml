@@ -8,9 +8,9 @@
     <fragment
         android:id="@+id/personajeDetailFragment"
         android:name="moreno.cazalilla.jesusmaria.t2.PersonajeDetailFragment"
-        android:label="personaje_detail_fragment">
+        android:label="personaje_detail_fragment" >
         <action
-            android:id="@+id/action_personajeDetailFragment_to_personajeListFragment2"
+            android:id="@+id/action_personajeDetailFragment_to_personajeListFragment"
             app:destination="@id/personajeListFragment" />
     </fragment>
     <fragment
@@ -18,18 +18,19 @@
         android:name="moreno.cazalilla.jesusmaria.t2.PersonajeListFragment"
         android:label="personaje_list_fragment">
         <action
-            android:id="@+id/action_personajeListFragment_to_personajeDetailFragment2"
+            android:id="@+id/action_personajeListFragment_to_personajeDetailFragment"
             app:destination="@id/personajeDetailFragment" />
         <action
-            android:id="@+id/action_personajeListFragment_to_preferencesFragment"
-            app:destination="@id/preferencesFragment" />
+            android:id="@+id/action_personajeListFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/preferencesFragment"
-        android:name="moreno.cazalilla.jesusmaria.t2.PreferencesFragment"
-        android:label="PreferencesFragment" >
+        android:id="@+id/settingsFragment"
+        android:name="moreno.cazalilla.jesusmaria.t2.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" >
         <action
-            android:id="@+id/action_preferencesFragment_to_personajeListFragment"
+            android:id="@+id/action_settingsFragment_to_personajeListFragment"
             app:destination="@id/personajeListFragment" />
     </fragment>
 </navigation>

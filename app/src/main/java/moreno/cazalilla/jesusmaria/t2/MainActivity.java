@@ -24,6 +24,7 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
+import androidx.preference.PreferenceManager;
 
 
 import moreno.cazalilla.jesusmaria.t2.databinding.ActivityMainBinding;
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (menuItem.getItemId() == R.id.nav_ajustes) {
 
                 getSupportFragmentManager().beginTransaction()
-                        .replace(content, new PreferencesFragment())
+                        .replace(R.id.nav_host_fragment, new SettingsFragment())
                         .commit();
 
             } else if (menuItem.getItemId() == R.id.nav_idioma) {
