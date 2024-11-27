@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (menuItem.getItemId() == R.id.nav_ajustes) {
 
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.nav_host_fragment, new SettingsFragment())
+                        .replace(R.id.main, new SettingsFragment())
                         .commit();
 
             } else if (menuItem.getItemId() == R.id.nav_idioma) {
