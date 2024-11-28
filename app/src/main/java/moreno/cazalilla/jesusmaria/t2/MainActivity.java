@@ -82,8 +82,9 @@ public class MainActivity extends AppCompatActivity {
         toggle = new ActionBarDrawerToggle(
                 this,
                 binding.main,
-                R.string.setting_drawer,
-                R.string.language_drawer
+                R.string.language_drawer,
+                R.string.home_drawer
+
         );
         binding.main.addDrawerListener(toggle);
         toggle.syncState();
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (menuItem.getItemId() == R.id.nav_ajustes) {
 
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.main, new SettingsFragment())
+                        .replace(R.id.nav_ajustes, new SettingsFragment())
                         .commit();
 
             } else if (menuItem.getItemId() == R.id.nav_idioma) {
@@ -121,6 +122,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void changeToListFragment(View view) {
+        //navegamos al fragmento listado de personajes
+        Navigation.findNavController(view).navigate(R.id.personajeListFragment);
+    }
 
     //método para manejar el click en el RecyclerView
     public void personajeClicked(Personaje currentPersonaje, View view) {
